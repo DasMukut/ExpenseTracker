@@ -2,22 +2,21 @@ import { useContext } from "react";
 import { AppContext } from "../context";
 
 function Input() {
-  const {
-    item,
-    setItem,
-    setQuantity,
-    quantity,
-    setShowDisplay,
-    showDisplay
-  } = useContext(AppContext);
+  const { item, setItem, setQuantity, quantity, setShowDisplay, showDisplay } =
+    useContext(AppContext);
+    
+    const changeItem =(e)=>{
+      setItem(e.target.value)
+    }
   const handleData = (e) => {
     e.preventDefault();
     const details = {
       item1: item,
-      quantity1: quantity
+      quantity1: quantity,
     };
-
-    console.log(details);
+    console.log(details)
+    setItem("");
+    setQuantity("");
   };
   return (
     <form onSubmit={handleData}>
@@ -27,7 +26,7 @@ function Input() {
           type="text"
           placeholder="Insert title"
           value={item}
-          onChange={(e) => setItem([...item, e.target.value])}
+          onChange={changeItem}
         />
       </div>
 

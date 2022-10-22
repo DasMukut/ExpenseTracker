@@ -5,7 +5,7 @@ function Display() {
   return (
     <>
       <h1>Inside Display</h1>
-      <h1>{item}</h1>
+      <h1>{...item}</h1>
     </>
   );
 }
