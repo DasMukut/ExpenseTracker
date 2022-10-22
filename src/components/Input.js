@@ -2,22 +2,28 @@ import { useContext } from "react";
 import { AppContext } from "../context";
 
 function Input() {
-  const { item, setItem, setQuantity, quantity, setShowDisplay, showDisplay } =
+  const { item, setItem, setQuantity, quantity, setItemList } =
     useContext(AppContext);
     
     const changeItem =(e)=>{
       setItem(e.target.value)
     }
+    
   const handleData = (e) => {
     e.preventDefault();
-    const details = {
-      item1: item,
-      quantity1: quantity,
-    };
-    console.log(details)
-    setItem("");
-    setQuantity("");
-  };
+    setItemList((olditem)=>{
+      return [...olditem, item]
+      
+    })
+    // const details = {
+    //   item1: item,
+    //   quantity1: quantity,
+    // };
+     setItem("")
+  
+  }
+  
+    // console.log(details)
   return (
     <form onSubmit={handleData}>
       <div>

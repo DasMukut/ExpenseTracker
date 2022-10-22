@@ -7,6 +7,7 @@ function App() {
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
   const [showDisplay, setShowDisplay] = useState(false);
+  const [itemList, setItemList] = useState([]);
   //need to create button as Goback
   return (
     <>
@@ -19,7 +20,9 @@ function App() {
           price,
           setPrice,
           showDisplay,
-          setShowDisplay
+          setShowDisplay,
+          itemList,
+          setItemList,
         }}
       >
         {/* {showDisplay?<Display/>:<Input/>} */}
